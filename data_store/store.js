@@ -37,7 +37,10 @@ class LocalStore {
     let error = { message: "", systemMessage: "" };
 
     if (isKeyPresent.length) {
-      if (isKeyPresent[0].timeToLive <= Math.floor(Date.now() / 1000)) {
+      if (
+        isKeyPresent[0].timeToLive !== -1 &&
+        isKeyPresent[0].timeToLive <= Math.floor(Date.now() / 1000)
+      ) {
         error.message = "This key is expired and cannot be deleted";
       } else {
         let dataAfterDelete = allData.filter((data) => data.key !== key);
@@ -50,7 +53,8 @@ class LocalStore {
         });
       }
     } else {
-      error.message = "No matching key in the database";
+      error.message =
+        "No element with the corresponding key exists in the database";
     }
 
     return { data: null, errMessage: error };
@@ -69,14 +73,14 @@ class LocalStore {
     return allData;
   };
 
-  readElement = (id) => {
+  readElement = (key) => {
     let returnObject = { errMessage: { message: "", systemMessage: "" } };
     const allData = this.readWholeFile();
     if (!allData) {
       error.message = "The file is empty";
       returnObject.errMessage = error;
     } else {
-      const requiredData = allData.filter((data) => data.key === id);
+      const requiredData = allData.filter((data) => data.key === key);
       if (!requiredData.length) {
         returnObject.errMessage.message =
           "No element with the corresponding key exists in the database";

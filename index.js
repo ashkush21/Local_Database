@@ -12,7 +12,7 @@ checkRead = () => {
 };
 
 checkCreate = () => {
-  const key = "6";
+  const key = "5";
   const value = {
     name: "mikasa",
     roll_number: "45645",
@@ -43,7 +43,7 @@ initialFunction = () => {
   const newFilePath = "./data_store/db.json";
   database = new LocalStore(newFilePath);
   //   database = new LocalStore();
-  //   checkCreate();
+  checkCreate();
   //   checkRead();
   //   checkDelete();
 };
