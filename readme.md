@@ -9,7 +9,12 @@ This project tries to create a local database with **CRD** operations. The data 
   - db.json: This file get created automatically when no file path for storage.
 - index.js: This file has a sample javascript code which uses store.js as a library to store data. It contains a test code to showcase how to use the library.
 
-### Usage:
+### Usage( to test the working ):
+
+- **index.js** file contains a sample implementation of the library. There are different functions already implemented to test the working of the database. Uncomment the function call **checkCreate()** to check **createElement()** function, **checkRead()** to check the **readElement()** function and **checkDelete()** to check the working of **deleteElement()** function. Appropriate data can be passed in their implementation by changing the corresponding variables.
+- After uncommenting the required functions run **node index.js** to see the use that function.
+
+### Usage( In some other project ):
 
 - import store.js file in your project like:
 
@@ -26,8 +31,6 @@ const database = new LocalStore(newFilePath);
 
 - Here the **newFilePath** parameter shows the locations where you want to store the file which contains the data. This parameter is **optional**
 - The below given functions can be accessed using the dot operator using the object created.
-- **index.js** file contains a sample implementation of the library. There are different functions already implemented to test the working of the database. Uncomment the function call **checkCreate()** to check **createElement()** function, **checkRead()** to check the **readElement()** function and **checkDelete()** to check the working of **deleteElement()** function. Appropriate data can be passed in their implementation by changing the corresponding variables.
-- After uncommenting the required functions run **node index.js** to see the use that function.
 
 ### Implementation detail of store.js
 
