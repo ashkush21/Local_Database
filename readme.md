@@ -26,6 +26,8 @@ const database = new LocalStore(newFilePath);
 
 - Here the **newFilePath** parameter shows the locations where you want to store the file which contains the data. This parameter is **optional**
 - The below given functions can be accessed using the dot operator using the object created.
+- **index.js** file contains a sample implementation of the library. There are different functions already implemented to test the working of the database. Uncomment the function call **checkCreate()** to check **createElement()** function, **checkRead()** to check the **readElement()** function and **checkDelete()** to check the working of **deleteElement()** function. Appropriate data can be passed in their implementation by changing the corresponding variables.
+- After uncommenting the required functions run **node index.js** to see the use that function.
 
 ### Implementation detail of store.js
 

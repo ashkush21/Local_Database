@@ -43,7 +43,7 @@ initialFunction = () => {
   const newFilePath = "./data_store/db.json";
   database = new LocalStore(newFilePath);
   //   database = new LocalStore();
-  checkCreate();
+  //   checkCreate();
   //   checkRead();
   //   checkDelete();
 };
